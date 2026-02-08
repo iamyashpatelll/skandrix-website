@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Technology from "./pages/Technology";
 import Startups from "./pages/Startups";
+import Videos from "./pages/Videos";
 import Connect from "./pages/Connect";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/startups" element={<Startups />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/connect" element={<Connect />} />
         </Routes>
         <Footer />
