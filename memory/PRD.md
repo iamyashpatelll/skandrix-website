@@ -36,15 +36,16 @@ Build a premium, minimal website for Skandrix - a business-first technology and 
 
 ### Phase 1: Frontend Development ✅
 **Components Created:**
-- Header.jsx - Sticky navigation with scroll effect
+- Header.jsx - Sticky navigation with scroll effect (updated: "Core" instead of "Home")
 - Footer.jsx - Company info and links
-- Home.jsx - Complete landing page with all sections
+- Home.jsx - Complete landing page (now labeled as "Core" in navigation)
 - Technology.jsx - Services page with accordion
 - Startups.jsx - Startup stages with visual cards
+- Videos.jsx - **NEW** Startup insights video library with filtering
 - Connect.jsx - Contact page with form
 
 **Data Layer:**
-- mock.js - All mock data (services, process steps, impact stories, tech services, startup stages)
+- mock.js - All mock data including new video content (6 startup-related videos)
 
 **Styling:**
 - Montserrat font imported via Google Fonts
@@ -61,10 +62,22 @@ Build a premium, minimal website for Skandrix - a business-first technology and 
 - "Different by Design" - Comparison table
 - Technology services with expandable accordions
 - Startup growth stages with alternating layouts
+- **NEW: Videos page with:**
+  - Category filtering (All, Pre-Seed, Seed, Series A, Growth)
+  - 6 startup-related videos with thumbnails
+  - Video player modal with embedded YouTube player
+  - Duration badges and category tags
+  - Hover animations and play button overlay
 - Contact form with toast notifications (frontend only)
 - Smooth scroll behavior
 - Hover animations on cards and images
 - Responsive grid layouts
+
+### Phase 2: Updates (December 8, 2025) ✅
+**Navigation Changes:**
+- Renamed "Home" to "Core" in header and footer
+- Added "Videos" link to navigation
+- Updated routing to include /videos path
 
 ## Prioritized Backlog
 
