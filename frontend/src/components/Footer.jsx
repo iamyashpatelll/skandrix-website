@@ -6,11 +6,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Skandrix</h3>
+    <footer className="bg-black text-white py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+          <div className="sm:col-span-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">Skandrix</h3>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
               Business comes first. Technology follows. We're your growth partner — connecting strategy, network, and technology to build systems that last.
             </p>
@@ -74,10 +74,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-gray-400 text-sm text-center">
-            © {currentYear} Skandrix. All rights reserved.
-          </p>
+        <div className="border-t border-gray-800 pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400 text-sm text-center sm:text-left">
+              © {currentYear} Skandrix. All rights reserved.
+            </p>
+            <Link 
+              to="/admin/login" 
+              className="text-gray-500 hover:text-gray-300 text-xs transition-colors"
+            >
+              Admin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
