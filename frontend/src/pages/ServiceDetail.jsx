@@ -103,18 +103,18 @@ const ServiceDetail = () => {
     'Snowflake': 'https://cdn.simpleicons.org/snowflake',
     
     // ERP & CRM
-    'SAP': 'https://cdn.simpleicons.org/sap',
+    'SAP': 'https://cdn.worldvectorlogo.com/logos/sap-2.svg',
     'Salesforce': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg',
-    'Odoo': 'https://cdn.simpleicons.org/odoo',
-    'Microsoft Dynamics': 'https://cdn.simpleicons.org/dynamics365',
+    'Odoo': 'https://cdn.worldvectorlogo.com/logos/odoo.svg',
+    'Microsoft Dynamics': 'https://cdn.worldvectorlogo.com/logos/dynamics-365.svg',
     'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     
     // Blockchain
-    'Ethereum': 'https://cdn.simpleicons.org/ethereum',
+    'Ethereum': 'https://cdn.worldvectorlogo.com/logos/ethereum-eth.svg',
     'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg',
-    'Web3.js': 'https://cdn.simpleicons.org/web3dotjs',
-    'Hardhat': 'https://cdn.simpleicons.org/hardhat',
-    'IPFS': 'https://cdn.simpleicons.org/ipfs',
+    'Web3.js': 'https://cdn.worldvectorlogo.com/logos/web3js.svg',
+    'Hardhat': 'https://cdn.worldvectorlogo.com/logos/hardhat.svg',
+    'IPFS': 'https://cdn.worldvectorlogo.com/logos/ipfs.svg',
     
     // Additional common techs
     'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
