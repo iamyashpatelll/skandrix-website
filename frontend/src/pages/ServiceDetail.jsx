@@ -110,10 +110,10 @@ const ServiceDetail = () => {
     'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
     
     // Blockchain
-    'Ethereum': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg',
-    'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg',
+    'Ethereum': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ethereum/ethereum-original.svg',
+    'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg',
     'Web3.js': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/web3dotjs.svg',
-    'Hardhat': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hardhat.svg',
+    'Hardhat': 'https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png',
     'IPFS': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ipfs.svg',
     
     // Additional common techs
