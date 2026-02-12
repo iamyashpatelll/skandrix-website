@@ -106,7 +106,7 @@ const ServiceDetail = () => {
     'SAP': 'https://cdn.worldvectorlogo.com/logos/sap-2.svg',
     'Salesforce': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg',
     'Odoo': 'https://cdn.worldvectorlogo.com/logos/odoo.svg',
-    'Microsoft Dynamics': 'https://cdn.worldvectorlogo.com/logos/dynamics-365.svg',
+    'Microsoft Dynamics': 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Microsoft_Dynamics_365_logo.svg',
     'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     
     // Blockchain
