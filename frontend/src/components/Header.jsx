@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { techServices } from '../data/mock';
-import * as Icons from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -44,10 +41,6 @@ const Header = () => {
     { path: '/connect', label: 'Connect' }
   ];
 
-  const getServiceSlug = (title) => {
-    return title.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, '-');
-  };
-
   return (
     <>
       <header
@@ -66,66 +59,17 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-              {navLinks.map((link) => {
-                if (link.label === 'Technology') {
-                  return (
-                    <div 
-                      key={link.path}
-                      className="relative"
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
-                    >
-                      <Link
-                        to={link.path}
-                        className={`text-sm font-medium transition-opacity hover:opacity-70 flex items-center gap-1 ${
-                          location.pathname === link.path ? 'opacity-100' : 'opacity-60'
-                        }`}
-                      >
-                        {link.label}
-                        <ChevronDown size={16} className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                      </Link>
-
-                      {/* Dropdown Menu */}
-                      {isServicesOpen && (
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-4 z-50 animate-dropdown">
-                          <div className="max-h-96 overflow-y-auto px-2">
-                            {techServices.map((service) => {
-                              const IconComponent = Icons[service.icon] || Icons.Code2;
-                              return (
-                                <Link
-                                  key={service.id}
-                                  to={`/services/${getServiceSlug(service.title)}`}
-                                  className="flex items-start gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
-                                >
-                                  <div className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center mt-0.5">
-                                    <IconComponent size={16} />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <p className="font-semibold text-sm text-black">{service.title}</p>
-                                    <p className="text-xs text-gray-600 mt-1 line-clamp-2">{service.description}</p>
-                                  </div>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-                
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`text-sm font-medium transition-opacity hover:opacity-70 ${
-                      location.pathname === link.path ? 'opacity-100' : 'opacity-60'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium transition-opacity hover:opacity-70 ${
+                    location.pathname === link.path ? 'opacity-100' : 'opacity-60'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
             {/* Desktop CTA */}
@@ -176,29 +120,6 @@ const Header = () => {
                 </Link>
               ))}
               
-              {/* Mobile Services List */}
-              <div className="border-b border-gray-100 pb-4">
-                <p className="text-lg font-semibold text-gray-400 uppercase tracking-wide mb-3">Services</p>
-                <div className="space-y-2 max-h-64 overflow-y-auto">
-                  {techServices.map((service) => {
-                    const IconComponent = Icons[service.icon] || Icons.Code2;
-                    return (
-                      <Link
-                        key={service.id}
-                        to={`/services/${getServiceSlug(service.title)}`}
-                        className="flex items-center gap-3 text-base text-gray-700 hover:text-black py-2 transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <div className="flex-shrink-0 w-6 h-6 bg-black text-white rounded flex items-center justify-center">
-                          <IconComponent size={14} />
-                        </div>
-                        <span className="truncate">{service.title}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-              
               <div className="pt-6">
                 <Link to="/connect" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button variant="default" size="lg" className="w-full text-lg py-6">
@@ -232,27 +153,12 @@ const Header = () => {
           }
         }
 
-        @keyframes dropdown {
-          from {
-            opacity: 0;
-            transform: translateX(-50%) translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-          }
-        }
-
         .animate-fade-in {
           animation: fade-in 0.2s ease-out;
         }
 
         .animate-slide-down {
           animation: slide-down 0.3s ease-out;
-        }
-
-        .animate-dropdown {
-          animation: dropdown 0.2s ease-out;
         }
       `}</style>
     </>
