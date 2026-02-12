@@ -173,7 +173,7 @@ const Header = () => {
                     <div key={link.path} className="border-b border-gray-100">
                       <button
                         onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                        className={`w-full flex items-center justify-between text-2xl font-semibold py-4 transition-colors ${
+                        className={`w-full flex items-center justify-between text-2xl font-semibold py-4 transition-colors text-left ${
                           location.pathname.startsWith('/technology') || location.pathname.startsWith('/services')
                             ? 'text-black' 
                             : 'text-gray-600'
@@ -187,20 +187,20 @@ const Header = () => {
                         />
                       </button>
                       
-                      {/* Mobile Services Dropdown */}
+                      {/* Mobile Services Dropdown - Scrollable */}
                       <div 
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                          isMobileServicesOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+                        className={`transition-all duration-300 ease-in-out ${
+                          isMobileServicesOpen ? 'max-h-[280px] opacity-100 pb-4' : 'max-h-0 opacity-0 overflow-hidden'
                         }`}
                       >
-                        <div className="space-y-1 pl-2">
+                        <div className={`space-y-1 pl-2 ${isMobileServicesOpen ? 'overflow-y-auto max-h-[260px]' : ''}`}>
                           {techServices.map((service) => {
                             const IconComponent = Icons[service.icon] || Icons.Code2;
                             return (
                               <Link
                                 key={service.id}
                                 to={`/services/${getServiceSlug(service.title)}`}
-                                className="flex items-center gap-3 text-base text-gray-700 hover:text-black py-3 px-3 rounded-lg hover:bg-gray-50 transition-all"
+                                className="flex items-center gap-3 text-base text-gray-700 hover:text-black py-3 px-3 rounded-lg hover:bg-gray-50 transition-all text-left"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 data-testid={`mobile-service-${service.id}`}
                               >
@@ -221,7 +221,7 @@ const Header = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-2xl font-semibold py-4 transition-colors border-b border-gray-100 ${
+                    className={`text-2xl font-semibold py-4 transition-colors border-b border-gray-100 text-left ${
                       location.pathname === link.path 
                         ? 'text-black' 
                         : 'text-gray-600 hover:text-black'
