@@ -96,14 +96,13 @@ const Header = () => {
                                   <Link
                                     key={service.id}
                                     to={`/services/${getServiceSlug(service.title)}`}
-                                    className="flex items-start gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-all duration-200 hover:shadow-md"
+                                    className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-all duration-200 hover:shadow-md"
                                   >
-                                    <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center mt-0.5">
+                                    <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center">
                                       <IconComponent size={18} />
                                     </div>
                                     <div className="flex-1 min-w-0">
                                       <p className="font-semibold text-sm text-black leading-tight">{service.title}</p>
-                                      <p className="text-xs text-gray-600 mt-1.5 line-clamp-2 leading-relaxed">{service.description}</p>
                                     </div>
                                   </Link>
                                 );
