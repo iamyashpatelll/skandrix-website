@@ -110,10 +110,10 @@ const ServiceDetail = () => {
     'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     
     // Blockchain
-    'Ethereum': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ethereum/ethereum-original.svg',
+    'Ethereum': 'https://cryptologos.cc/logos/ethereum-eth-logo.svg',
     'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg',
     'Web3.js': 'https://raw.githubusercontent.com/web3/web3.js/HEAD/assets/logo/web3js.svg',
-    'Hardhat': 'https://raw.githubusercontent.com/NomicFoundation/hardhat/main/docs/.vuepress/public/hardhat-logo.svg',
+    'Hardhat': 'https://hardhat.org/hardhat-logo-dark.svg',
     'IPFS': 'https://upload.wikimedia.org/wikipedia/commons/1/18/Ipfs-logo-1024-ice-text.png',
     
     // Additional common techs
