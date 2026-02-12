@@ -487,6 +487,8 @@ Build a premium, minimal website for Skandrix - a business-first technology and 
 - **Auto-Close Behavior:** Menu closes automatically when a service is selected
 - **Route Change Handler:** Dropdown resets when navigating to new page
 - **Desktop Unchanged:** Hover behavior on desktop remains intact (onMouseEnter/onMouseLeave)
+- **Left-Aligned Menu Items:** All mobile menu items now left-aligned
+- **Scrollable Services:** Services dropdown has fixed height (280px) with vertical scroll
 
 **Test Results (iteration_1.json):**
 - ✅ Hamburger menu open/close
@@ -502,3 +504,30 @@ Build a premium, minimal website for Skandrix - a business-first technology and 
 - `mobile-technology-dropdown-toggle` - Toggle button for Technology dropdown
 - `mobile-service-{id}` - Individual service links in mobile dropdown
 - `mobile-cta-button` - Let's Talk CTA button
+
+### Phase 9: Startups Page Redesign + Footer Update (December 12, 2025) ✅
+
+**Startups Page Overhaul:**
+- **New Compelling Hero:** "Your first call when building something extraordinary"
+- **For Visionary Founders badge** with rocket icon
+- **Hero Image Section:** Large image with quote overlay
+- **4 "Why Founders Choose Us" Cards:**
+  - We Speak Founder
+  - Speed is Everything
+  - Outcome-Obsessed
+  - Your Success is Ours
+- **4 Journey Stages with Images:**
+  - Pre-Seed: From Idea to Validation
+  - Seed: Building Momentum
+  - Series A: Scaling Excellence
+  - Growth & Beyond: Sustaining Leadership
+- **6 Founder Promises:** (black background section)
+  - Authentic promises like "We'll be there at 2 AM when production breaks"
+- **Inspirational Quote Section**
+- **Final CTA:** "Ready to build something that matters?"
+- **NO FAKE NUMBERS** - Removed generic metrics, replaced with authentic content
+
+**Footer Updates:**
+- **LinkedIn URL updated** to: https://www.linkedin.com/company/skandrix/
+- **Twitter icon removed** - only LinkedIn and Email remain
+- Cleaner footer with just essential social links
