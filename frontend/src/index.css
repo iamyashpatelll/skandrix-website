@@ -4,14 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* Prevent horizontal scroll globally */
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
         "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
 }
 
 code {
@@ -19,14 +23,39 @@ code {
         source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-/* Fix mobile horizontal scroll */
-html, body {
+/* Prevent all containers from overflow */
+*, *::before, *::after {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Ensure root containers don't overflow */
+#root, .App {
+    width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
 }
 
-/* Improve mobile spacing */
+/* Responsive images */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent text overflow */
+p, h1, h2, h3, h4, h5, h6, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Mobile-first responsive typography */
 @media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
     h1 {
         font-size: 2rem !important;
         line-height: 1.2 !important;
@@ -48,19 +77,28 @@ html, body {
     }
     
     /* Better button sizing on mobile */
-    button {
+    button, a[role="button"] {
         min-height: 44px !important;
     }
-    
-    /* Fix card padding on mobile */
-    .card {
-        padding: 1rem !important;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    html {
+        font-size: 16px;
     }
 }
 
 /* Improve touch targets on mobile */
 @media (max-width: 768px) {
-    a, button, [role="button"] {
+    a, button, [role="button"], [role="link"] {
         min-height: 44px;
         min-width: 44px;
         display: inline-flex;
@@ -69,11 +107,21 @@ html, body {
     }
 }
 
-/* Better mobile image handling */
+/* Ensure sections and containers are responsive */
+section, main, article, div {
+    max-width: 100%;
+}
+
+/* Fix for potential carousel overflow */
+.carousel, .slider {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Responsive grid fixes */
 @media (max-width: 768px) {
-    img {
-        max-width: 100%;
-        height: auto;
+    .grid {
+        grid-template-columns: 1fr !important;
     }
 }
 
