@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { techServices } from '../data/mock';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -36,10 +38,13 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'Core' },
-    { path: '/technology', label: 'Technology' },
     { path: '/startups', label: 'Startups' },
     { path: '/connect', label: 'Connect' }
   ];
+
+  const getServiceSlug = (title) => {
+    return title.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, '-');
+  };
 
   return (
     <>
@@ -70,6 +75,36 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Technology Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button className="text-sm font-medium transition-opacity hover:opacity-70 opacity-60 flex items-center gap-1">
+                  Technology
+                  <ChevronDown size={16} className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown Menu */}
+                {isServicesOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-4 z-50 animate-dropdown">
+                    <div className="max-h-96 overflow-y-auto px-2">
+                      {techServices.map((service) => (
+                        <Link
+                          key={service.id}
+                          to={`/services/${getServiceSlug(service.title)}`}
+                          className="block px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
+                        >
+                          <p className="font-semibold text-sm text-black">{service.title}</p>
+                          <p className="text-xs text-gray-600 mt-1 line-clamp-1">{service.description}</p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </nav>
 
             {/* Desktop CTA */}
