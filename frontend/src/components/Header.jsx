@@ -27,12 +27,14 @@ const Header = () => {
     setIsMobileServicesOpen(false);
   }, [location]);
 
-  // Prevent body scroll when mobile menu is open
+  // Prevent body scroll when mobile menu is open and reset dropdown state
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      // Reset services dropdown when menu closes
+      setIsMobileServicesOpen(false);
     }
     return () => {
       document.body.style.overflow = 'unset';
