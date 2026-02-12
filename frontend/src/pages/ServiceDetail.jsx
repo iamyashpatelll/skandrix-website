@@ -96,8 +96,8 @@ const ServiceDetail = () => {
     'AWS Security': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
     
     // Data Analytics & BI
-    'Tableau': 'https://cdn.simpleicons.org/tableau',
-    'Power BI': 'https://cdn.simpleicons.org/powerbi',
+    'Tableau': 'https://cdn.worldvectorlogo.com/logos/tableau-software.svg',
+    'Power BI': 'https://cdn.worldvectorlogo.com/logos/power-bi.svg',
     'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
     'Apache Spark': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg',
     'Snowflake': 'https://cdn.simpleicons.org/snowflake',
