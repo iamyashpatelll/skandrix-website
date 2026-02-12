@@ -248,13 +248,17 @@ const ServiceDetail = () => {
                         alt={tech} 
                         className="w-full h-full object-contain"
                         onError={(e) => {
+                          e.target.onerror = null;
                           e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
+                          e.target.parentElement.querySelector('.fallback-icon').style.display = 'flex';
                         }}
                       />
                     ) : null}
-                    <div className="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center font-bold text-xs" style={{display: 'none'}}>
-                      {tech.substring(0, 2)}
+                    <div 
+                      className="fallback-icon w-14 h-14 bg-black text-white rounded-xl items-center justify-center font-bold text-sm"
+                      style={{ display: techStackLogos[tech] ? 'none' : 'flex' }}
+                    >
+                      {tech.substring(0, 2).toUpperCase()}
                     </div>
                   </div>
                   <p className="text-sm font-semibold text-center">{tech}</p>
