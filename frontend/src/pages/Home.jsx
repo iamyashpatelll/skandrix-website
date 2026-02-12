@@ -5,7 +5,6 @@ import { Card, CardContent } from '../components/ui/card';
 import { ArrowRight, CheckCircle2, Rocket, TrendingUp, Users, Zap } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { services, processSteps, impactStories, comparison } from '../data/mock';
-import AnimatedBrain from '../components/AnimatedBrain';
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -118,11 +117,15 @@ const Home = () => {
                 style={parallaxStyle}
               />
               <div 
-                className="relative overflow-hidden rounded-2xl"
+                className="relative overflow-hidden rounded-2xl shadow-2xl"
                 style={parallaxStyle}
               >
-                <AnimatedBrain />
-                <div className={`absolute inset-0 bg-gradient-to-t from-black/10 to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+                <img
+                  src="https://images.unsplash.com/photo-1631727498532-b27e7f9796ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHw0fHxtaW5pbWFsJTIwYWJzdHJhY3QlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3MDUzNzY4MHww&ixlib=rb-4.1.0&q=85"
+                  alt="Abstract technology"
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/40 to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
               </div>
             </div>
           </div>

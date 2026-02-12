@@ -38,6 +38,7 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'Core' },
+    { path: '/technology', label: 'Technology' },
     { path: '/startups', label: 'Startups' },
     { path: '/connect', label: 'Connect' }
   ];
@@ -64,47 +65,66 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium transition-opacity hover:opacity-70 ${
-                    location.pathname === link.path ? 'opacity-100' : 'opacity-60'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              
-              {/* Technology Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <button className="text-sm font-medium transition-opacity hover:opacity-70 opacity-60 flex items-center gap-1">
-                  Technology
-                  <ChevronDown size={16} className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                </button>
+              {navLinks.map((link) => {
+                if (link.label === 'Technology') {
+                  return (
+                    <div 
+                      key={link.path}
+                      className="relative"
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
+                      <Link
+                        to={link.path}
+                        className={`text-sm font-medium transition-opacity hover:opacity-70 flex items-center gap-1 ${
+                          location.pathname === link.path ? 'opacity-100' : 'opacity-60'
+                        }`}
+                      >
+                        {link.label}
+                        <ChevronDown size={16} className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                      </Link>
 
-                {/* Dropdown Menu */}
-                {isServicesOpen && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-4 z-50 animate-dropdown">
-                    <div className="max-h-96 overflow-y-auto px-2">
-                      {techServices.map((service) => (
-                        <Link
-                          key={service.id}
-                          to={`/services/${getServiceSlug(service.title)}`}
-                          className="block px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
-                        >
-                          <p className="font-semibold text-sm text-black">{service.title}</p>
-                          <p className="text-xs text-gray-600 mt-1 line-clamp-1">{service.description}</p>
-                        </Link>
-                      ))}
+                      {/* Dropdown Menu */}
+                      {isServicesOpen && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-4 z-50 animate-dropdown">
+                          <div className="max-h-96 overflow-y-auto px-2">
+                            {techServices.map((service) => {
+                              const IconComponent = Icons[service.icon] || Icons.Code2;
+                              return (
+                                <Link
+                                  key={service.id}
+                                  to={`/services/${getServiceSlug(service.title)}`}
+                                  className="flex items-start gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
+                                >
+                                  <div className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center mt-0.5">
+                                    <IconComponent size={16} />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <p className="font-semibold text-sm text-black">{service.title}</p>
+                                    <p className="text-xs text-gray-600 mt-1 line-clamp-2">{service.description}</p>
+                                  </div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                )}
-              </div>
+                  );
+                }
+                
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`text-sm font-medium transition-opacity hover:opacity-70 ${
+                      location.pathname === link.path ? 'opacity-100' : 'opacity-60'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Desktop CTA */}
@@ -139,7 +159,7 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           <nav className="fixed top-20 left-0 right-0 bottom-0 bg-white z-40 md:hidden overflow-y-auto animate-slide-down">
-            <div className="flex flex-col p-6 space-y-4">
+            <div className="flex flex-col p-6 space-y-4 max-w-full">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -157,18 +177,24 @@ const Header = () => {
               
               {/* Mobile Services List */}
               <div className="border-b border-gray-100 pb-4">
-                <p className="text-lg font-semibold text-gray-400 uppercase tracking-wide mb-3">Technology Services</p>
+                <p className="text-lg font-semibold text-gray-400 uppercase tracking-wide mb-3">Services</p>
                 <div className="space-y-2 max-h-64 overflow-y-auto">
-                  {techServices.map((service) => (
-                    <Link
-                      key={service.id}
-                      to={`/services/${getServiceSlug(service.title)}`}
-                      className="block text-base text-gray-700 hover:text-black py-2 transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {service.title}
-                    </Link>
-                  ))}
+                  {techServices.map((service) => {
+                    const IconComponent = Icons[service.icon] || Icons.Code2;
+                    return (
+                      <Link
+                        key={service.id}
+                        to={`/services/${getServiceSlug(service.title)}`}
+                        className="flex items-center gap-3 text-base text-gray-700 hover:text-black py-2 transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <div className="flex-shrink-0 w-6 h-6 bg-black text-white rounded flex items-center justify-center">
+                          <IconComponent size={14} />
+                        </div>
+                        <span className="truncate">{service.title}</span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
               
