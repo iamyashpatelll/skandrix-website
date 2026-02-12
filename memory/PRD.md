@@ -475,3 +475,30 @@ Build a premium, minimal website for Skandrix - a business-first technology and 
 - Added Technology dropdown with all services
 - Mobile menu shows services list under "TECHNOLOGY SERVICES"
 - Footer updated (removed Technology link)
+
+### Phase 8: Mobile Navigation Dropdown Fix (December 12, 2025) ✅
+
+**Mobile Navigation Improvements:**
+- **Click-to-Toggle Dropdown:** Technology menu item now expands/collapses on tap (mobile only)
+- **New State Management:** Added `isMobileServicesOpen` state for mobile dropdown control
+- **Smooth Animations:** CSS transition with max-height animation (300ms ease-in-out)
+- **Chevron Indicator:** Rotates 180deg to indicate open/closed state
+- **Clean Service List:** Services displayed with icons in a scrollable list within dropdown
+- **Auto-Close Behavior:** Menu closes automatically when a service is selected
+- **Route Change Handler:** Dropdown resets when navigating to new page
+- **Desktop Unchanged:** Hover behavior on desktop remains intact (onMouseEnter/onMouseLeave)
+
+**Test Results (iteration_1.json):**
+- ✅ Hamburger menu open/close
+- ✅ Technology dropdown expand/collapse on click
+- ✅ Chevron animation
+- ✅ Service navigation from dropdown
+- ✅ Menu auto-close after selection
+- ✅ Desktop hover dropdown preserved
+- ✅ Mobile viewport (375px) layout correct
+- **100% Frontend Test Success Rate**
+
+**Data Test IDs Added:**
+- `mobile-technology-dropdown-toggle` - Toggle button for Technology dropdown
+- `mobile-service-{id}` - Individual service links in mobile dropdown
+- `mobile-cta-button` - Let's Talk CTA button
