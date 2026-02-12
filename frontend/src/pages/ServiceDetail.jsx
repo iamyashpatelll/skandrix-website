@@ -98,27 +98,27 @@ const ServiceDetail = () => {
     // Data Analytics & BI
     'Tableau': 'https://cdn.simpleicons.org/tableau',
     'Power BI': 'https://cdn.simpleicons.org/powerbi',
-    'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-    'Apache Spark': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg',
-    'Snowflake': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/snowflake.svg',
+    'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
+    'Apache Spark': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg',
+    'Snowflake': 'https://cdn.simpleicons.org/snowflake',
     
     // ERP & CRM
-    'SAP': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sap.svg',
-    'Salesforce': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
-    'Odoo': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/odoo.svg',
-    'Microsoft Dynamics': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dynamics365.svg',
-    'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    'SAP': 'https://cdn.simpleicons.org/sap',
+    'Salesforce': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg',
+    'Odoo': 'https://cdn.simpleicons.org/odoo',
+    'Microsoft Dynamics': 'https://cdn.simpleicons.org/dynamics365',
+    'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     
     // Blockchain
-    'Ethereum': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ethereum/ethereum-original.svg',
+    'Ethereum': 'https://cdn.simpleicons.org/ethereum',
     'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg',
-    'Web3.js': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/web3dotjs.svg',
-    'Hardhat': 'https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png',
-    'IPFS': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ipfs.svg',
+    'Web3.js': 'https://cdn.simpleicons.org/web3dotjs',
+    'Hardhat': 'https://cdn.simpleicons.org/hardhat',
+    'IPFS': 'https://cdn.simpleicons.org/ipfs',
     
     // Additional common techs
-    'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-    'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
+    'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
+    'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg'
   };
 
   return (
