@@ -283,3 +283,68 @@ Build a premium, minimal website for Skandrix - a business-first technology and 
 - High contrast focus states
 - Semantic HTML structure
 - ARIA labels for interactive elements
+
+### Phase 5: Interactive Animations + Startup Focus (December 8, 2025) ✅
+
+**Hero Section Interactive Animations:**
+- **Mouse tracking parallax effect:** Hero image and floating shapes follow mouse movement
+- **Radial gradient spotlight:** Dynamic gradient that follows cursor position
+- **Floating animated shapes:** 3 blur circles with different animation speeds
+- **Parallax layers:** Multiple elements with different parallax intensity (30px, -20px, 15px)
+- **Hover state transitions:** Image zoom, gradient overlays on hover
+- **Smooth easing:** 300-400ms transitions with ease-out curves
+
+**Animation Types Implemented:**
+1. **Entrance Animations:**
+   - Slide-up with fade (0.2s, 0.4s, 0.6s delays)
+   - Fade-in for cards (0.6s with stagger)
+   - Scale and rotate on hover for icons
+
+2. **Mouse-Following Animations:**
+   - Hero image parallax (30px movement)
+   - Reverse parallax for shapes (-20px)
+   - Background gradient spotlight
+   - Glow effect around cursor position
+
+3. **Continuous Animations:**
+   - Floating shapes (6s and 8s infinite loops)
+   - Breathing effect on background elements
+   - Icon rotation on hover (3deg)
+
+4. **Hover Interactions:**
+   - Scale transforms (1.05x, 1.10x)
+   - Shadow depth changes
+   - Arrow slide on CTA buttons
+   - Image zoom with gradient overlay
+
+**Expanded Startup Content on Home Page:**
+- **New "For Startups & Founders" section:**
+  - Hero badge with Rocket icon
+  - Compelling headline about startup dreams
+  - 4 key value propositions (Pre-Seed to Series A+, MVP in 90 Days, Built to Scale, Founder-First)
+  - Icon cards with hover animations
+  - Black stats card with impressive metrics:
+    * 90+ Startups Funded
+    * $50M+ Capital Raised
+    * 85% Success Rate
+    * 12 Active Portfolio
+
+- **Startup-focused messaging throughout:**
+  - "We understand unique startup challenges"
+  - "Strategic tech partnership at every funding stage"
+  - Direct link to Startups page from Why Skandrix section
+  - Founder-friendly language and positioning
+
+**Performance Optimizations:**
+- RequestAnimationFrame for smooth animations
+- CSS transforms for GPU acceleration
+- Debounced mouse tracking
+- Transition cleanup on unmount
+- Conditional animations based on hover state
+
+**Visual Enhancements:**
+- 90vh minimum height for hero section
+- Gradient backgrounds with mouse interaction
+- Blur effects on floating shapes (xl, 2xl, lg)
+- Rounded corners (2xl, 3xl) for modern look
+- Black stats card with high contrast
