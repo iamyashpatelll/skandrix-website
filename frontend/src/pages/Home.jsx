@@ -10,6 +10,14 @@ const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const heroRef = useRef(null);
+  const statsRef = useRef(null);
+  const [statsVisible, setStatsVisible] = useState(false);
+  const [counts, setCounts] = useState({
+    startups: 0,
+    capital: 0,
+    success: 0,
+    portfolio: 0
+  });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -32,6 +40,67 @@ const Home = () => {
       }
     };
   }, []);
+
+  // Intersection Observer for stats animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !statsVisible) {
+            setStatsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [statsVisible]);
+
+  // Animate counters
+  useEffect(() => {
+    if (!statsVisible) return;
+
+    const duration = 3000; // 3 seconds
+    const steps = 60; // 60 frames for smooth animation
+    const interval = duration / steps;
+
+    const targets = {
+      startups: 90,
+      capital: 50,
+      success: 85,
+      portfolio: 12
+    };
+
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+
+      setCounts({
+        startups: Math.floor(targets.startups * progress),
+        capital: Math.floor(targets.capital * progress),
+        success: Math.floor(targets.success * progress),
+        portfolio: Math.floor(targets.portfolio * progress)
+      });
+
+      if (currentStep >= steps) {
+        setCounts(targets);
+        clearInterval(timer);
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [statsVisible]);
 
   const parallaxStyle = {
     transform: `translate(${(mousePosition.x - 0.5) * 30}px, ${(mousePosition.y - 0.5) * 30}px)`,
@@ -186,19 +255,24 @@ const Home = () => {
           </div>
 
           {/* Startup Stats */}
-          <div className="bg-black text-white rounded-3xl p-8 sm:p-12">
+          <div ref={statsRef} className="bg-black text-white rounded-3xl p-8 sm:p-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              {[
-                { number: "90+", label: "Startups Funded" },
-                { number: "$50M+", label: "Capital Raised" },
-                { number: "85%", label: "Success Rate" },
-                { number: "12", label: "Active Portfolio" }
-              ].map((stat, index) => (
-                <div key={index} className="space-y-2">
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold">{stat.number}</p>
-                  <p className="text-sm sm:text-base text-gray-400">{stat.label}</p>
-                </div>
-              ))}
+              <div className="space-y-2">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold">{counts.startups}+</p>
+                <p className="text-sm sm:text-base text-gray-400">Startups Funded</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold">${counts.capital}M+</p>
+                <p className="text-sm sm:text-base text-gray-400">Capital Raised</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold">{counts.success}%</p>
+                <p className="text-sm sm:text-base text-gray-400">Success Rate</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold">{counts.portfolio}</p>
+                <p className="text-sm sm:text-base text-gray-400">Active Portfolio</p>
+              </div>
             </div>
           </div>
         </div>
