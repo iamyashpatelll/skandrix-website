@@ -30,30 +30,94 @@ const ServiceDetail = () => {
   }
 
   const techStackLogos = {
+    // Mobile Development
     'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
     'Swift': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
     'Kotlin': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
+    'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+    
+    // Web Development
     'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
     'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
     'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-    'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+    
+    // Cloud & DevOps
+    'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
     'Azure': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
     'GCP': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
     'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
     'Kubernetes': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
     'Terraform': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg',
+    
+    // AI & Machine Learning
     'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
     'PyTorch': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
     'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+    'OpenAI': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg',
+    'LangChain': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/langchain.svg',
+    'Hugging Face': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/huggingface.svg',
+    
+    // E-Commerce
+    'Shopify': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg',
+    'WooCommerce': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg',
+    'Magento': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/magento/magento-original.svg',
+    'Stripe': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/stripe.svg',
+    'PayPal': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/paypal.svg',
+    
+    // UI/UX Design
     'Figma': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+    'Adobe XD': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg',
+    'Sketch': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg',
+    'InVision': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/invision.svg',
+    'Framer': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/framer.svg',
+    
+    // API Development
+    'Express': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+    'GraphQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
+    'REST': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openapiinitiative.svg',
+    'Postman': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg',
+    'Swagger': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg',
+    
+    // Testing & QA
     'Selenium': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg',
     'Jest': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
+    'Cypress': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cypress.svg',
+    'Playwright': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/playwright.svg',
+    'JMeter': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/apachejmeter.svg',
+    
+    // Cybersecurity
+    'OWASP': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owasp.svg',
+    'Burp Suite': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg',
+    'Metasploit': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg',
+    'Wireshark': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg',
+    'AWS Security': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+    
+    // Data Analytics & BI
+    'Tableau': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tableau.svg',
+    'Power BI': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg',
+    'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    'Apache Spark': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg',
+    'Snowflake': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/snowflake.svg',
+    
+    // ERP & CRM
+    'SAP': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sap.svg',
+    'Salesforce': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+    'Odoo': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/odoo.svg',
+    'Microsoft Dynamics': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dynamics365.svg',
+    'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    
+    // Blockchain
+    'Ethereum': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg',
+    'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg',
+    'Web3.js': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/web3dotjs.svg',
+    'Hardhat': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hardhat.svg',
+    'IPFS': 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ipfs.svg',
+    
+    // Additional common techs
     'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-    'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-    'GraphQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
     'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
   };
 
