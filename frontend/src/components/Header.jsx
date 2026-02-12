@@ -163,48 +163,77 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           <nav className="fixed top-20 left-0 right-0 bottom-0 bg-white z-40 md:hidden overflow-y-auto animate-slide-down">
-            <div className="flex flex-col p-6 space-y-4 max-w-full">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-2xl font-semibold py-4 transition-colors border-b border-gray-100 ${
-                    location.pathname === link.path 
-                      ? 'text-black' 
-                      : 'text-gray-600 hover:text-black'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              
-              {/* Mobile Services List with Icons */}
-              <div className="border-b border-gray-100 pb-4">
-                <p className="text-lg font-semibold text-gray-400 uppercase tracking-wide mb-3">Services</p>
-                <div className="space-y-2 max-h-64 overflow-y-auto">
-                  {techServices.map((service) => {
-                    const IconComponent = Icons[service.icon] || Icons.Code2;
-                    return (
-                      <Link
-                        key={service.id}
-                        to={`/services/${getServiceSlug(service.title)}`}
-                        className="flex items-center gap-3 text-base text-gray-700 hover:text-black py-2 transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
+            <div className="flex flex-col p-6 space-y-2 max-w-full">
+              {navLinks.map((link) => {
+                // Special handling for Technology with dropdown
+                if (link.label === 'Technology') {
+                  return (
+                    <div key={link.path} className="border-b border-gray-100">
+                      <button
+                        onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                        className={`w-full flex items-center justify-between text-2xl font-semibold py-4 transition-colors ${
+                          location.pathname.startsWith('/technology') || location.pathname.startsWith('/services')
+                            ? 'text-black' 
+                            : 'text-gray-600'
+                        }`}
+                        data-testid="mobile-technology-dropdown-toggle"
                       >
-                        <div className="flex-shrink-0 w-6 h-6 bg-black text-white rounded flex items-center justify-center">
-                          <IconComponent size={14} />
+                        <span>{link.label}</span>
+                        <ChevronDown 
+                          size={24} 
+                          className={`transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} 
+                        />
+                      </button>
+                      
+                      {/* Mobile Services Dropdown */}
+                      <div 
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          isMobileServicesOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <div className="space-y-1 pl-2">
+                          {techServices.map((service) => {
+                            const IconComponent = Icons[service.icon] || Icons.Code2;
+                            return (
+                              <Link
+                                key={service.id}
+                                to={`/services/${getServiceSlug(service.title)}`}
+                                className="flex items-center gap-3 text-base text-gray-700 hover:text-black py-3 px-3 rounded-lg hover:bg-gray-50 transition-all"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                data-testid={`mobile-service-${service.id}`}
+                              >
+                                <div className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center">
+                                  <IconComponent size={16} />
+                                </div>
+                                <span className="truncate font-medium">{service.title}</span>
+                              </Link>
+                            );
+                          })}
                         </div>
-                        <span className="truncate">{service.title}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
+                      </div>
+                    </div>
+                  );
+                }
+                
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`text-2xl font-semibold py-4 transition-colors border-b border-gray-100 ${
+                      location.pathname === link.path 
+                        ? 'text-black' 
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               
               <div className="pt-6">
                 <Link to="/connect" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button variant="default" size="lg" className="w-full text-lg py-6">
+                  <Button variant="default" size="lg" className="w-full text-lg py-6" data-testid="mobile-cta-button">
                     Let's Talk
                   </Button>
                 </Link>
