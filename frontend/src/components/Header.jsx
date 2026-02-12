@@ -87,26 +87,28 @@ const Header = () => {
 
                       {/* Dropdown Menu with Service Icons */}
                       {isServicesOpen && (
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-4 z-50 animate-dropdown">
-                          <div className="max-h-96 overflow-y-auto px-2">
-                            {techServices.map((service) => {
-                              const IconComponent = Icons[service.icon] || Icons.Code2;
-                              return (
-                                <Link
-                                  key={service.id}
-                                  to={`/services/${getServiceSlug(service.title)}`}
-                                  className="flex items-start gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
-                                >
-                                  <div className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center mt-0.5">
-                                    <IconComponent size={16} />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <p className="font-semibold text-sm text-black">{service.title}</p>
-                                    <p className="text-xs text-gray-600 mt-1 line-clamp-2">{service.description}</p>
-                                  </div>
-                                </Link>
-                              );
-                            })}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[90vw] bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-6 z-50 animate-dropdown">
+                          <div className="max-h-[500px] overflow-y-auto px-4">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                              {techServices.map((service) => {
+                                const IconComponent = Icons[service.icon] || Icons.Code2;
+                                return (
+                                  <Link
+                                    key={service.id}
+                                    to={`/services/${getServiceSlug(service.title)}`}
+                                    className="flex items-start gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-all duration-200 hover:shadow-md"
+                                  >
+                                    <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center mt-0.5">
+                                      <IconComponent size={18} />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <p className="font-semibold text-sm text-black leading-tight">{service.title}</p>
+                                      <p className="text-xs text-gray-600 mt-1.5 line-clamp-2 leading-relaxed">{service.description}</p>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
                           </div>
                         </div>
                       )}
