@@ -105,6 +105,11 @@ p, h1, h2, h3, h4, h5, h6, span, div {
         align-items: center;
         justify-content: center;
     }
+    
+    /* Override for mobile menu items - left align */
+    nav a.text-left {
+        justify-content: flex-start !important;
+    }
 }
 
 /* Ensure sections and containers are responsive */
