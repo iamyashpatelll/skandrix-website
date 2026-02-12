@@ -65,7 +65,7 @@ const Startups = () => {
       title: 'Sustaining Leadership',
       description: 'Market leadership isn\'t a destination — it\'s a continuous journey. We help you stay ahead while others catch up.',
       icon: Crown,
-      image: 'https://images.unsplash.com/photo-758519290111-bfbd61b32d49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMGdyb3d0aCUyMHN1Y2Nlc3MlMjBzdHJhdGVneXxlbnwwfHx8fDE3NzA5MTcxOTd8MA&ixlib=rb-4.1.0&q=85',
+      image: 'https://images.unsplash.com/photo-1762164509589-441e2bae95a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMGxlYWRlcnNoaXAlMjBjb3Jwb3JhdGUlMjBzdWNjZXNzfGVufDB8fHx8MTc3MDkxNzU0Mnww&ixlib=rb-4.1.0&q=85',
       services: [
         'Innovation lab & R&D initiatives',
         'M&A technical due diligence',
