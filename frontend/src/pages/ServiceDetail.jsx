@@ -84,9 +84,9 @@ const ServiceDetail = () => {
     // Testing & QA
     'Selenium': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg',
     'Jest': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg',
-    'Cypress': 'https://cdn.simpleicons.org/cypress',
-    'Playwright': 'https://cdn.simpleicons.org/playwright',
-    'JMeter': 'https://cdn.simpleicons.org/apachejmeter',
+    'Cypress': 'https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.svg',
+    'Playwright': 'https://playwright.dev/img/playwright-logo.svg',
+    'JMeter': 'https://jmeter.apache.org/images/jmeter_square.svg',
     
     // Cybersecurity
     'OWASP': 'https://cdn.simpleicons.org/owasp',
