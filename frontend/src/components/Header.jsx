@@ -155,6 +155,23 @@ const Header = () => {
                 </Link>
               ))}
               
+              {/* Mobile Services List */}
+              <div className="border-b border-gray-100 pb-4">
+                <p className="text-lg font-semibold text-gray-400 uppercase tracking-wide mb-3">Technology Services</p>
+                <div className="space-y-2 max-h-64 overflow-y-auto">
+                  {techServices.map((service) => (
+                    <Link
+                      key={service.id}
+                      to={`/services/${getServiceSlug(service.title)}`}
+                      className="block text-base text-gray-700 hover:text-black py-2 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
               <div className="pt-6">
                 <Link to="/connect" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button variant="default" size="lg" className="w-full text-lg py-6">
@@ -188,12 +205,27 @@ const Header = () => {
           }
         }
 
+        @keyframes dropdown {
+          from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+          }
+        }
+
         .animate-fade-in {
           animation: fade-in 0.2s ease-out;
         }
 
         .animate-slide-down {
           animation: slide-down 0.3s ease-out;
+        }
+
+        .animate-dropdown {
+          animation: dropdown 0.2s ease-out;
         }
       `}</style>
     </>
