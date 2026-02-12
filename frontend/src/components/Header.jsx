@@ -19,7 +19,6 @@ const Header = () => {
     { path: '/', label: 'Core' },
     { path: '/technology', label: 'Technology' },
     { path: '/startups', label: 'Startups' },
-    { path: '/videos', label: 'Videos' },
     { path: '/connect', label: 'Connect' }
   ];
 

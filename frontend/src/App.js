@@ -6,8 +6,9 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Technology from "./pages/Technology";
 import Startups from "./pages/Startups";
-import Videos from "./pages/Videos";
 import Connect from "./pages/Connect";
+import AdminLogin from "./pages/admin/Login";
+import AdminDashboard from "./pages/admin/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -18,15 +19,17 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/technology" element={<Technology />} />
-          <Route path="/startups" element={<Startups />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/connect" element={<Connect />} />
+          {/* Public Routes */}
+          <Route path="/" element={<><Header /><Home /><Footer /></>} />
+          <Route path="/technology" element={<><Header /><Technology /><Footer /></>} />
+          <Route path="/startups" element={<><Header /><Startups /><Footer /></>} />
+          <Route path="/connect" element={<><Header /><Connect /><Footer /></>} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
