@@ -110,11 +110,11 @@ const ServiceDetail = () => {
     'Custom Solutions': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     
     // Blockchain
-    'Ethereum': 'https://cdn.worldvectorlogo.com/logos/ethereum-eth.svg',
+    'Ethereum': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ethereum/ethereum-original.svg',
     'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg',
-    'Web3.js': 'https://cdn.worldvectorlogo.com/logos/web3js.svg',
-    'Hardhat': 'https://cdn.worldvectorlogo.com/logos/hardhat.svg',
-    'IPFS': 'https://cdn.worldvectorlogo.com/logos/ipfs.svg',
+    'Web3.js': 'https://raw.githubusercontent.com/web3/web3.js/HEAD/assets/logo/web3js.svg',
+    'Hardhat': 'https://raw.githubusercontent.com/NomicFoundation/hardhat/main/docs/.vuepress/public/hardhat-logo.svg',
+    'IPFS': 'https://upload.wikimedia.org/wikipedia/commons/1/18/Ipfs-logo-1024-ice-text.png',
     
     // Additional common techs
     'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
