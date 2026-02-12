@@ -24,6 +24,7 @@ const Header = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
   }, [location]);
 
   // Prevent body scroll when mobile menu is open
