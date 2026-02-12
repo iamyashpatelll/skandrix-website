@@ -83,93 +83,278 @@ export const techServices = [
   {
     id: 1,
     title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications that users love and businesses scale.",
-    techStack: ["React Native", "Flutter", "Swift", "Kotlin"],
+    description: "Native and cross-platform mobile applications that users love and businesses scale. Build cutting-edge mobile solutions for iOS and Android.",
+    detailedDescription: "Transform your business idea into a powerful mobile application. We specialize in creating intuitive, high-performance apps that engage users and drive business growth. From consumer apps to enterprise solutions, we deliver mobile experiences that matter.",
+    benefits: [
+      "Native iOS & Android development",
+      "Cross-platform solutions (React Native, Flutter)",
+      "App Store & Play Store optimization",
+      "Push notifications & real-time features",
+      "Offline functionality & data sync",
+      "Payment gateway integration"
+    ],
+    techStack: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
     process: [
       "Discovery & Strategy",
       "UX Design & Prototyping",
       "Agile Development",
       "Quality Assurance",
       "Launch & Support"
-    ]
+    ],
+    icon: "Smartphone"
   },
   {
     id: 2,
-    title: "Web Development",
-    description: "High-performance web applications built with modern frameworks and best practices.",
-    techStack: ["React", "Next.js", "Node.js", "TypeScript"],
+    title: "Web Application Development",
+    description: "High-performance web applications built with modern frameworks. Scalable, secure, and optimized for conversions.",
+    detailedDescription: "Create powerful web applications that drive your business forward. We build responsive, fast, and scalable web solutions using cutting-edge technologies. From MVPs to enterprise platforms, we deliver web experiences that convert.",
+    benefits: [
+      "Modern frontend frameworks (React, Next.js)",
+      "Robust backend architecture",
+      "RESTful & GraphQL APIs",
+      "Real-time data processing",
+      "Progressive Web Apps (PWA)",
+      "SEO optimization built-in"
+    ],
+    techStack: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL"],
     process: [
       "Architecture Planning",
       "Frontend Development",
       "Backend Integration",
       "Performance Optimization",
       "Deployment & Monitoring"
-    ]
+    ],
+    icon: "Globe"
   },
   {
     id: 3,
-    title: "Cloud & DevOps",
-    description: "Scalable infrastructure and automated workflows that grow with your business.",
-    techStack: ["AWS", "Azure", "Docker", "Kubernetes"],
+    title: "Cloud Infrastructure & DevOps",
+    description: "Scalable cloud infrastructure and automated workflows. Build, deploy, and scale with confidence on AWS, Azure, or GCP.",
+    detailedDescription: "Move to the cloud and scale effortlessly. We design and implement cloud-native architectures that reduce costs, improve reliability, and enable rapid scaling. Our DevOps practices ensure continuous delivery and zero-downtime deployments.",
+    benefits: [
+      "Cloud migration & optimization",
+      "CI/CD pipeline automation",
+      "Infrastructure as Code (IaC)",
+      "Container orchestration (Docker, Kubernetes)",
+      "Auto-scaling & load balancing",
+      "24/7 monitoring & alerting"
+    ],
+    techStack: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform"],
     process: [
       "Infrastructure Design",
       "CI/CD Pipeline Setup",
       "Cloud Migration",
       "Security Hardening",
       "Cost Optimization"
-    ]
+    ],
+    icon: "Cloud"
   },
   {
     id: 4,
-    title: "QA & Testing",
-    description: "Comprehensive testing strategies that ensure reliability and user satisfaction.",
-    techStack: ["Selenium", "Jest", "Cypress", "Playwright"],
+    title: "AI & Machine Learning Solutions",
+    description: "Intelligent systems powered by AI and ML. Turn your data into actionable insights and automated decisions.",
+    detailedDescription: "Harness the power of artificial intelligence to transform your business. From predictive analytics to natural language processing, we build AI solutions that automate workflows, enhance decision-making, and create competitive advantages.",
+    benefits: [
+      "Custom ML model development",
+      "Natural Language Processing (NLP)",
+      "Computer vision & image recognition",
+      "Recommendation engines",
+      "Predictive analytics & forecasting",
+      "Chatbots & virtual assistants"
+    ],
+    techStack: ["TensorFlow", "PyTorch", "OpenAI", "LangChain", "Python", "Hugging Face"],
     process: [
-      "Test Strategy",
-      "Automated Testing",
-      "Manual QA",
-      "Performance Testing",
-      "Continuous Monitoring"
-    ]
+      "Use Case Analysis",
+      "Data Pipeline & Preparation",
+      "Model Development & Training",
+      "Integration & Deployment",
+      "Monitoring & Iteration"
+    ],
+    icon: "Brain"
   },
   {
     id: 5,
-    title: "AI & ML Development",
-    description: "Intelligent systems that transform data into actionable business insights.",
-    techStack: ["TensorFlow", "PyTorch", "OpenAI", "LangChain"],
+    title: "E-Commerce Solutions",
+    description: "Complete e-commerce platforms that drive sales. From product catalogs to payment processing, we build online stores that convert.",
+    detailedDescription: "Launch and scale your online business with our comprehensive e-commerce solutions. We create seamless shopping experiences with integrated payments, inventory management, and marketing tools that drive revenue growth.",
+    benefits: [
+      "Custom storefront design",
+      "Multi-vendor marketplace support",
+      "Payment gateway integration",
+      "Inventory & order management",
+      "Analytics & conversion tracking",
+      "Mobile-responsive checkout"
+    ],
+    techStack: ["Shopify", "WooCommerce", "Magento", "Stripe", "PayPal"],
     process: [
-      "Use Case Analysis",
-      "Data Pipeline",
-      "Model Development",
-      "Integration",
-      "Iteration & Training"
-    ]
+      "Store Strategy & Planning",
+      "Design & Development",
+      "Payment Integration",
+      "Testing & Launch",
+      "Marketing & Optimization"
+    ],
+    icon: "ShoppingCart"
   },
   {
     id: 6,
-    title: "UI/UX Design",
-    description: "Beautiful, intuitive interfaces that create memorable user experiences.",
-    techStack: ["Figma", "Adobe XD", "Design Systems", "Prototyping"],
+    title: "UI/UX Design Services",
+    description: "Beautiful, intuitive interfaces that users love. Design systems, prototypes, and user research that drive engagement.",
+    detailedDescription: "Create memorable user experiences that drive business results. Our design team combines user research, visual design, and interaction design to craft interfaces that are both beautiful and functional.",
+    benefits: [
+      "User research & persona development",
+      "Wireframing & prototyping",
+      "Visual design & branding",
+      "Design system creation",
+      "Usability testing",
+      "Accessibility (WCAG) compliance"
+    ],
+    techStack: ["Figma", "Adobe XD", "Sketch", "InVision", "Framer"],
     process: [
       "User Research",
       "Wireframing",
       "Visual Design",
       "Prototyping",
       "Usability Testing"
-    ]
+    ],
+    icon: "Palette"
   },
   {
     id: 7,
-    title: "ERP Consulting",
-    description: "Enterprise solutions that streamline operations and drive efficiency.",
-    techStack: ["SAP", "Oracle", "Odoo", "Custom Solutions"],
+    title: "API Development & Integration",
+    description: "Robust APIs that power your applications. RESTful, GraphQL, and WebSocket APIs built for scale and reliability.",
+    detailedDescription: "Connect your systems and enable seamless data flow with our API development services. We design and build APIs that are secure, scalable, and well-documented, making integration effortless.",
+    benefits: [
+      "RESTful API design & development",
+      "GraphQL implementation",
+      "Third-party API integration",
+      "API documentation (Swagger/OpenAPI)",
+      "Rate limiting & security",
+      "Webhook implementation"
+    ],
+    techStack: ["Node.js", "Express", "GraphQL", "REST", "Postman", "Swagger"],
+    process: [
+      "API Design & Planning",
+      "Development & Testing",
+      "Documentation",
+      "Integration Support",
+      "Monitoring & Maintenance"
+    ],
+    icon: "Workflow"
+  },
+  {
+    id: 8,
+    title: "Quality Assurance & Testing",
+    description: "Comprehensive testing strategies that ensure reliability. Automated tests, manual QA, and performance testing.",
+    detailedDescription: "Deliver bug-free software with our comprehensive QA services. We implement automated testing, manual QA, and continuous testing practices to ensure your application performs flawlessly.",
+    benefits: [
+      "Automated test suite development",
+      "Manual exploratory testing",
+      "Performance & load testing",
+      "Security testing",
+      "Cross-browser compatibility",
+      "Mobile device testing"
+    ],
+    techStack: ["Selenium", "Jest", "Cypress", "Playwright", "JMeter", "Postman"],
+    process: [
+      "Test Strategy Development",
+      "Automated Testing",
+      "Manual QA",
+      "Performance Testing",
+      "Continuous Monitoring"
+    ],
+    icon: "CheckCircle"
+  },
+  {
+    id: 9,
+    title: "Cybersecurity Services",
+    description: "Protect your business from threats. Security audits, penetration testing, and compliance implementation.",
+    detailedDescription: "Safeguard your digital assets with enterprise-grade security. We conduct thorough security audits, implement best practices, and ensure compliance with industry standards.",
+    benefits: [
+      "Security audits & assessments",
+      "Penetration testing",
+      "Compliance (GDPR, HIPAA, SOC2)",
+      "Vulnerability scanning",
+      "Incident response planning",
+      "Security training for teams"
+    ],
+    techStack: ["OWASP", "Burp Suite", "Metasploit", "Wireshark", "AWS Security"],
+    process: [
+      "Security Assessment",
+      "Threat Modeling",
+      "Implementation",
+      "Testing & Validation",
+      "Ongoing Monitoring"
+    ],
+    icon: "Shield"
+  },
+  {
+    id: 10,
+    title: "Data Analytics & BI",
+    description: "Turn data into insights. Business intelligence dashboards, data warehousing, and predictive analytics.",
+    detailedDescription: "Make data-driven decisions with our analytics and BI solutions. We help you collect, process, and visualize data to uncover insights that drive business growth.",
+    benefits: [
+      "Custom dashboard development",
+      "Data warehouse implementation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "ETL pipeline development",
+      "Data visualization"
+    ],
+    techStack: ["Tableau", "Power BI", "Python", "SQL", "Apache Spark", "Snowflake"],
+    process: [
+      "Data Strategy",
+      "Pipeline Development",
+      "Dashboard Design",
+      "Implementation",
+      "Training & Support"
+    ],
+    icon: "BarChart"
+  },
+  {
+    id: 11,
+    title: "ERP & CRM Solutions",
+    description: "Enterprise software that streamlines operations. Custom ERP and CRM systems tailored to your business processes.",
+    detailedDescription: "Optimize your business operations with custom ERP and CRM solutions. We implement and customize enterprise software that aligns with your unique workflows and scales with your growth.",
+    benefits: [
+      "Process automation",
+      "Custom workflow design",
+      "Integration with existing systems",
+      "Reporting & analytics",
+      "Mobile access",
+      "Training & change management"
+    ],
+    techStack: ["SAP", "Salesforce", "Odoo", "Microsoft Dynamics", "Custom Solutions"],
     process: [
       "Requirements Analysis",
       "System Selection",
-      "Implementation",
+      "Customization & Implementation",
       "Training",
       "Ongoing Support"
-    ]
+    ],
+    icon: "Building"
+  },
+  {
+    id: 12,
+    title: "Blockchain Development",
+    description: "Decentralized solutions for the future. Smart contracts, DApps, and blockchain integration.",
+    detailedDescription: "Build trust and transparency with blockchain technology. We develop smart contracts, decentralized applications, and blockchain integrations that create new business models.",
+    benefits: [
+      "Smart contract development",
+      "DApp creation",
+      "NFT marketplace development",
+      "Cryptocurrency integration",
+      "Private blockchain networks",
+      "Blockchain consulting"
+    ],
+    techStack: ["Ethereum", "Solidity", "Web3.js", "Hardhat", "IPFS"],
+    process: [
+      "Blockchain Strategy",
+      "Smart Contract Development",
+      "Testing & Auditing",
+      "Deployment",
+      "Maintenance"
+    ],
+    icon: "Link"
   }
 ];
 
