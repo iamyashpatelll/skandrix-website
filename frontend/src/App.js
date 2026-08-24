@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -11,6 +11,16 @@ import ServiceDetail from "./pages/ServiceDetail";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   useEffect(() => {
     // Smooth scroll behavior
@@ -20,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<><Header /><Home /><Footer /></>} />
@@ -27,7 +38,7 @@ function App() {
           <Route path="/startups" element={<><Header /><Startups /><Footer /></>} />
           <Route path="/services/:slug" element={<><Header /><ServiceDetail /><Footer /></>} />
           <Route path="/connect" element={<><Header /><Connect /><Footer /></>} />
-          
+
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />

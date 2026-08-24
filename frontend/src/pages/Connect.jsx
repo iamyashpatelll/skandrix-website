@@ -6,7 +6,7 @@ import { Textarea } from '../components/ui/textarea';
 import { useToast } from '../hooks/use-toast';
 import { Toaster } from '../components/ui/sonner';
 import { toast } from 'sonner';
-import { Mail, Calendar, CheckCircle2 } from 'lucide-react';
+import { Mail, Calendar, CheckCircle2, Phone } from 'lucide-react';
 
 const Connect = () => {
   const [formData, setFormData] = useState({
@@ -95,10 +95,27 @@ const Connect = () => {
                   <div>
                     <h3 className="font-bold text-lg mb-2">Email Us</h3>
                     <a
-                      href="mailto:hello@skandrix.com"
+                      href="mailto:business@skandrix.com"
                       className="text-gray-600 hover:text-black transition-colors"
                     >
-                      hello@skandrix.com
+                      business@skandrix.com
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6 space-y-4">
+                  <div className="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Call Us</h3>
+                    <a
+                      href="tel:+917046664299"
+                      className="text-gray-600 hover:text-black transition-colors"
+                    >
+                      +91 70466 64299
                     </a>
                   </div>
                 </CardContent>
