@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -11,6 +11,30 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const location = useLocation();
+  const closeTimerRef = useRef(null);
+
+  // The dropdown panel is wider than its trigger link, so a diagonal mouse
+  // move toward an item can briefly cross empty space outside both elements.
+  // A short close delay absorbs that without needing pixel-perfect hit zones.
+  const openServicesMenu = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setIsServicesOpen(true);
+  };
+
+  const closeServicesMenu = () => {
+    closeTimerRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,11 +97,11 @@ const Header = () => {
               {navLinks.map((link) => {
                 if (link.label === 'Technology') {
                   return (
-                    <div 
+                    <div
                       key={link.path}
                       className="relative"
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
+                      onMouseEnter={openServicesMenu}
+                      onMouseLeave={closeServicesMenu}
                     >
                       <Link
                         to={link.path}
@@ -91,26 +115,29 @@ const Header = () => {
 
                       {/* Dropdown Menu with Service Icons */}
                       {isServicesOpen && (
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[90vw] bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-6 z-50 animate-dropdown">
-                          <div className="max-h-[500px] overflow-y-auto px-4">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
-                              {techServices.map((service) => {
-                                const IconComponent = Icons[service.icon] || Icons.Code2;
-                                return (
-                                  <Link
-                                    key={service.id}
-                                    to={`/services/${getServiceSlug(service.title)}`}
-                                    className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-all duration-200 hover:shadow-md"
-                                  >
-                                    <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center">
-                                      <IconComponent size={18} />
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                      <p className="font-semibold text-sm text-black leading-tight">{service.title}</p>
-                                    </div>
-                                  </Link>
-                                );
-                              })}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[600px] max-w-[90vw] z-50">
+                          <div className="bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 py-6 animate-dropdown">
+                            <div className="max-h-[500px] overflow-y-auto px-4">
+                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                                {techServices.map((service) => {
+                                  const IconComponent = Icons[service.icon] || Icons.Code2;
+                                  return (
+                                    <Link
+                                      key={service.id}
+                                      to={`/services/${getServiceSlug(service.title)}`}
+                                      onClick={() => setIsServicesOpen(false)}
+                                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-all duration-200 hover:shadow-md"
+                                    >
+                                      <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center">
+                                        <IconComponent size={18} />
+                                      </div>
+                                      <div className="flex-1 min-w-0">
+                                        <p className="font-semibold text-sm text-black leading-tight">{service.title}</p>
+                                      </div>
+                                    </Link>
+                                  );
+                                })}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -269,11 +296,11 @@ const Header = () => {
         @keyframes dropdown {
           from {
             opacity: 0;
-            transform: translateX(-50%) translateY(-10px);
+            transform: translateY(-10px);
           }
           to {
             opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
           }
         }
 
